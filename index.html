@@ -11,6 +11,7 @@
     <div class="content">
         <h1 class="animated-text">Welcome to GitFunded</h1>
         <div class="modmenu">
+            <!-- Original Sections -->
             <div class="menu-item">
                 <h2 class="menu-title">Software & Open Learning Resources</h2>
                 <ul>
@@ -19,6 +20,7 @@
                     <li><a href="https://ocw.mit.edu/" target="_blank">MIT OpenCourseWare</a></li>
                 </ul>
             </div>
+
             <div class="menu-item">
                 <h2 class="menu-title">Web Development Resources</h2>
                 <ul>
@@ -27,6 +29,7 @@
                     <li><a href="https://css-tricks.com/" target="_blank">CSS-Tricks</a></li>
                 </ul>
             </div>
+
             <div class="menu-item">
                 <h2 class="menu-title">Python Development Resources</h2>
                 <ul>
@@ -35,15 +38,55 @@
                     <li><a href="https://www.learnpython.org/" target="_blank">Learn Python</a></li>
                 </ul>
             </div>
+
+            <!-- Expanded AI Platforms Section -->
             <div class="menu-item">
-                <h2 class="menu-title">AI & Machine Learning</h2>
-                <ul>
-                    <li><a href="https://www.tensorflow.org/" target="_blank">TensorFlow</a></li>
-                    <li><a href="https://pytorch.org/" target="_blank">PyTorch</a></li>
-                    <li><a href="https://www.kaggle.com/" target="_blank">Kaggle</a></li>
-                </ul>
+                <h2 class="menu-title">AI Platforms</h2>
+                <div class="ai-categories"></div>
             </div>
         </div>
     </div>
+
+    <!-- AI Platforms Data -->
+    <script>
+        const aiPlatforms = [
+            // Machine Learning Frameworks
+            {category: "Machine Learning", name: "TensorFlow", url: "https://www.tensorflow.org/"},
+            {category: "Machine Learning", name: "PyTorch", url: "https://pytorch.org/"},
+            {category: "Machine Learning", name: "Keras", url: "https://keras.io/"},
+            
+            // NLP Platforms
+            {category: "NLP", name: "Hugging Face", url: "https://huggingface.co/"},
+            {category: "NLP", name: "spaCy", url: "https://spacy.io/"},
+            {category: "NLP", name: "NLTK", url: "https://www.nltk.org/"},
+            
+            // Computer Vision
+            {category: "Computer Vision", name: "OpenCV", url: "https://opencv.org/"},
+            {category: "Computer Vision", name: "Label Studio", url: "https://labelstud.io/"},
+            {category: "Computer Vision", name: "Roboflow", url: "https://roboflow.com/"},
+
+            // Add 290+ more entries here...
+            // Example format:
+            // {category: "Category", name: "Platform Name", url: "https://example.com"},
+        ];
+
+        // Generate AI Categories
+        const categoriesContainer = document.querySelector('.ai-categories');
+        const categories = [...new Set(aiPlatforms.map(p => p.category))];
+
+        categories.forEach(category => {
+            const categoryDiv = document.createElement('div');
+            categoryDiv.className = 'ai-category';
+            categoryDiv.innerHTML = `
+                <h3>${category}</h3>
+                <ul>
+                    ${aiPlatforms.filter(p => p.category === category)
+                        .map(p => `<li><a href="${p.url}" target="_blank">${p.name}</a></li>`)
+                        .join('')}
+                </ul>
+            `;
+            categoriesContainer.appendChild(categoryDiv);
+        });
+    </script>
 </body>
 </html>
