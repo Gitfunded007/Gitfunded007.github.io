@@ -7,7 +7,7 @@
 
 /* Body Styling */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Courier New', Courier, monospace; /* Modmenu-style font */
     overflow: hidden;
     background: #000;
     color: #fff;
@@ -41,7 +41,6 @@ body {
 .animated-text {
     font-size: 3rem;
     font-weight: bold;
-    font-family: 'Courier New', Courier, monospace; /* Modmenu-style font */
     background: linear-gradient(90deg, #ff00cc, #3333ff, #00ffcc, #ffcc00);
     -webkit-background-clip: text;
     background-clip: text;
@@ -50,36 +49,6 @@ body {
 }
 
 @keyframes glow {
-    0% {
-        text-shadow: 0 0 5px #ff00cc, 0 0 10px #ff00cc, 0 0 20px #ff00cc;
-    }
-    25% {
-        text-shadow: 0 0 5px #3333ff, 0 0 10px #3333ff, 0 0 20px #3333ff;
-    }
-    50% {
-        text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc, 0 0 20px #00ffcc;
-    }
-    75% {
-        text-shadow: 0 0 5px #ffcc00, 0 0 10px #ffcc00, 0 0 20px #ffcc00;
-    }
-    100% {
-        text-shadow: 0 0 5px #ff00cc, 0 0 10px #ff00cc, 0 0 20px #ff00cc;
-    }
-}
-
-/* Animated Chrome Text Styling */
-.chrome-text {
-    font-size: 2.5rem;
-    font-weight: bold;
-    font-family: 'Courier New', Courier, monospace; /* Modmenu-style font */
-    background: linear-gradient(90deg, #ff00cc, #3333ff, #00ffcc, #ffcc00);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    animation: chrome 3s infinite alternate;
-}
-
-@keyframes chrome {
     0% {
         text-shadow: 0 0 5px #ff00cc, 0 0 10px #ff00cc, 0 0 20px #ff00cc;
     }
@@ -117,7 +86,6 @@ body {
     font-size: 1.5rem;
     margin-bottom: 10px;
     color: #00ffcc;
-    font-family: 'Courier New', Courier, monospace; /* Modmenu-style font */
 }
 
 .menu-item ul {
@@ -132,7 +100,6 @@ body {
     color: #ffcc00;
     text-decoration: none;
     transition: color 0.3s ease;
-    font-family: 'Courier New', Courier, monospace; /* Modmenu-style font */
 }
 
 .menu-item ul li a:hover {
